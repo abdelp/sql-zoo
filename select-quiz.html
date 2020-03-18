@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="select-quiz.css">
+</head>
+
+<body>
+    <h1 id="firstHeading" class="firstHeading" lang="en">SELECT Quiz</h1>
+    <div class="ref_section">
+        <table class="db_ref">
+            <tbody>
+                <tr>
+                    <th>name</th>
+                    <th>region</th>
+                    <th>area</th>
+                    <th>population</th>
+                    <th>gdp</th>
+                </tr>
+                <tr>
+                    <td>Afghanistan</td>
+                    <td>South Asia</td>
+                    <td align="right">652225</td>
+                    <td align="right">26000000</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>Albania</td>
+                    <td>Europe</td>
+                    <td align="right">28728</td>
+                    <td align="right">3200000</td>
+                    <td align="right">6656000000</td>
+                </tr>
+                <tr>
+                    <td>Algeria</td>
+                    <td>Middle East</td>
+                    <td align="right">2400000</td>
+                    <td align="right">32900000</td>
+                    <td align="right">75012000000</td>
+                </tr>
+                <tr>
+                    <td>Andorra</td>
+                    <td>Europe</td>
+                    <td align="right">468</td>
+                    <td align="right">64000</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="quiz">
+        <div class="q">1. Select the code which produces this table
+            <table class="sqlmine">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>population</th>
+                    </tr>
+                    <tr>
+                        <td>Bahrain</td>
+                        <td class="r">1234571</td>
+                    </tr>
+                    <tr>
+                        <td>Swaziland</td>
+                        <td class="r">1220000</td>
+                    </tr>
+                    <tr>
+                        <td>Timor-Leste</td>
+                        <td class="r">1066409</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">FROM</span> <span class="n">world</span>
+          <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span> <span class="k">BETWEEN</span> <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">1250000</span>
+          </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">FROM</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span> 
+      <span class="k">WHERE</span> <span class="n">population</span> <span class="k">BETWEEN</span> <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">1250000</span>
+      <span class="k">SELECT</span> <span class="n">world</span>
+      </pre>
+            </div>
+            <div class="a y mw-highlight mw-content-ltr picked" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">population</span> <span class="k">BETWEEN</span> <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">1250000</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">population</span> <span class="k">BETWEEN</span> <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">1250000</span>
+      <span class="k">FROM</span> <span class="n">world</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">WHERE</span> <span class="n">population</span> <span class="k">BETWEEN</span> <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">1250000</span>
+      <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span>
+      </pre>
+            </div>
+        </div>
+        <div class="q">2. Pick the result you would obtain from this code:
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span>      <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span>
+            <span class="k">FROM</span> <span class="n">world</span>
+            <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="ss">"Al%"</span>
+            </pre>
+            </div>
+            <table class="d">
+                <caption>Table-A</caption>
+                <tbody>
+                    <tr>
+                        <td>Albania</td>
+                    </tr>
+                    <tr>
+                        <td>Algeria</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <caption>Table-B</caption>
+                <tbody>
+                    <tr>
+                        <td>%bania</td>
+                        <td>3200000</td>
+                    </tr>
+                    <tr>
+                        <td>%geria</td>
+                        <td>32900000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <caption>Table-C</caption>
+                <tbody>
+                    <tr>
+                        <td>Al</td>
+                        <td>0 </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <caption>Table-D</caption>
+                <tbody>
+                    <tr>
+                        <td>Albania</td>
+                        <td>3200000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="a y">
+                <caption>Table-E</caption>
+                <tbody>
+                    <tr>
+                        <td>Albania</td>
+                        <td>3200000</td>
+                    </tr>
+                    <tr>
+                        <td>Algeria</td>
+                        <td>32900000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="q">3. Select the code which shows the countries that end in A or L
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'a%'</span> <span class="k">AND</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'l%'</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span> 
+      <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'a%'</span> <span class="k">OR</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'l%'</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span> 
+      <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%a'</span> <span class="k">AND</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%l'</span>
+      </pre>
+            </div>
+            <div class="a mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span> 
+      <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%a'</span> <span class="k">OR</span> <span class="s1">'l%'</span>
+      </pre>
+            </div>
+            <div class="d y mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%a'</span> <span class="k">OR</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%l'</span>
+      </pre>
+            </div>
+        </div>
+        <div class="q">4. Pick the result from the query
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="k">length</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">FROM</span> <span class="n">world</span>
+      <span class="k">WHERE</span> <span class="k">length</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">=</span><span class="mi">5</span> <span class="k">and</span> <span class="n">region</span><span class="o">=</span><span class="s1">'Europe'</span>
+      </pre>
+            </div>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>length(name)</th>
+                    </tr>
+                    <tr>
+                        <td>Benin</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Lybia</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Egypt</td>
+                        <td class="r">5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>length(name)</th>
+                    </tr>
+                    <tr>
+                        <td>Italy</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Egypt</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Spain</td>
+                        <td class="r">5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="a y">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>length(name)</th>
+                    </tr>
+                    <tr>
+                        <td>Italy</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Malta</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>Spain</td>
+                        <td class="r">5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>length(name)</th>
+                    </tr>
+                    <tr>
+                        <td>Italy</td>
+                        <td class="r">5</td>
+                    </tr>
+                    <tr>
+                        <td>France</td>
+                        <td class="r">6</td>
+                    </tr>
+                    <tr>
+                        <td>Spain</td>
+                        <td class="r">5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>length(name)</th>
+                    </tr>
+                    <tr>
+                        <td>Sweden</td>
+                        <td class="r">6</td>
+                    </tr>
+                    <tr>
+                        <td>Norway</td>
+                        <td class="r">6</td>
+                    </tr>
+                    <tr>
+                        <td>Poland</td>
+                        <td class="r">6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="q">5. Here are the first few rows of the world table:
+            <table class="db_ref">
+                <tbody>
+                    <tr>
+                        <th>name</th>
+                        <th>region</th>
+                        <th>area</th>
+                        <th>population</th>
+                        <th>gdp</th>
+                    </tr>
+                    <tr>
+                        <td>Afghanistan</td>
+                        <td>South Asia</td>
+                        <td align="right">652225</td>
+                        <td align="right">26000000</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>Albania</td>
+                        <td>Europe</td>
+                        <td align="right">28728</td>
+                        <td align="right">3200000</td>
+                        <td align="right">6656000000</td>
+                    </tr>
+                    <tr>
+                        <td>Algeria</td>
+                        <td>Middle East</td>
+                        <td align="right">2400000</td>
+                        <td align="right">32900000</td>
+                        <td align="right">75012000000</td>
+                    </tr>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>Europe</td>
+                        <td align="right">468</td>
+                        <td align="right">64000</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">...</td>
+                    </tr>
+                </tbody>
+            </table>Pick the result you would obtain from this code:
+            <pre>SELECT name, area*2 FROM world WHERE population = 64000</pre>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>234</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>468</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="a y">
+                <tbody>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>936 </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>4680</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="d">
+                <tbody>
+                    <tr>
+                        <td>Andorra</td>
+                        <td>936</td>
+                    </tr>
+                    <tr>
+                        <td>Albania</td>
+                        <td>57456</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="q">6. Select the code that would show the countries with an area larger than 50000 and a population
+            smaller than 10000000
+            <div class="d mw-highlight mw-content-ltr picked" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&lt;</span> <span class="mi">50000</span> <span class="k">AND</span> <span class="n">population</span> <span class="o">&lt;</span> <span class="mi">10000000</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&lt;</span> <span class="mi">50000</span> <span class="k">AND</span> <span class="n">population</span> <span class="o">&gt;</span> <span class="mi">10000000</span>
+      </pre>
+            </div>
+            <div class="a y mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="mi">50000</span> <span class="k">AND</span> <span class="n">population</span> <span class="o">&lt;</span> <span class="mi">10000000</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="mi">50000</span> <span class="k">AND</span> <span class="n">population</span> <span class="o">&gt;</span> <span class="mi">10000000</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span> 
+      <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">50000</span> <span class="k">AND</span> <span class="n">population</span> <span class="o">=</span> <span class="mi">10000000</span>
+      </pre>
+            </div>
+        </div>
+        <div class="q">7. Select the code that shows the population density of China, Australia, Nigeria and France
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span> 
+      <span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="o">/</span><span class="n">population</span>
+      <span class="k">FROM</span> <span class="n">world</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'China'</span><span class="p">,</span> <span class="s1">'Nigeria'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">,</span> <span class="s1">'Australia'</span><span class="p">)</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span><span class="o">/</span><span class="n">population</span>
+      <span class="k">FROM</span> <span class="n">world</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="p">(</span><span class="s1">'China'</span><span class="p">,</span> <span class="s1">'Nigeria'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">,</span> <span class="s1">'Australia'</span><span class="p">)</span>
+      </pre>
+            </div>
+            <div class="a y mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span><span class="o">/</span><span class="n">area</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'China'</span><span class="p">,</span> <span class="s1">'Nigeria'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">,</span> <span class="s1">'Australia'</span><span class="p">)</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span><span class="o">/</span><span class="n">area</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="p">(</span><span class="s1">'China'</span><span class="p">,</span> <span class="s1">'Nigeria'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">,</span> <span class="s1">'Australia'</span><span class="p">)</span>
+      </pre>
+            </div>
+            <div class="d mw-highlight mw-content-ltr picked" dir="ltr">
+                <pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+       <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'China'</span><span class="p">,</span> <span class="s1">'Nigeria'</span><span class="p">,</span> <span class="s1">'France'</span><span class="p">,</span> <span class="s1">'Australia'</span><span class="p">)</span>
+      </pre>
+            </div>
+        </div>
+</body>
+
+</html>
