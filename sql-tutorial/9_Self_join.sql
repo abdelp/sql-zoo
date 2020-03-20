@@ -56,18 +56,22 @@ JOIN route b ON
   JOIN stops stopb ON (b.stop=stopb.id)
 WHERE stopa.name= 'Craiglockhart';
 
-SELECT origin.num, origin.company, s.name, destiny.num, destiny.company
-FROM (
-  SELECT num, company, pos, stop
-  FROM route r
-  WHERE stop < 147
-  AND stop > pos) origin
-JOIN (
-  SELECT num, company, pos, stop
-  FROM route r
-  WHERE pos < 147
-  AND stop >= 147
-  order by stop) destiny ON destiny.pos = origin.stop
-  AND origin.num <> destiny.num
-JOIN stops s ON s.id = origin.pos
-JOIN stops s2 ON s2.id = destiny.stop;
+WITH routes AS (
+	SELECT a.num bus_no, a.company, a.stop a_stop, sa.name sa_name,
+		   b.stop b_stop, sb.name sb_name
+	FROM route a
+	JOIN route b ON a.company = b.company
+			     AND a.num = b.num
+	JOIN stops sa ON sa.id = a.stop
+	JOIN stops sb ON sb.id = b.stop
+	WHERE sa.name = 'Craiglockhart' OR sb.name = 'Lochend'
+)
+SELECT first_bus.bus_no, first_bus.company, trans1.name, second_bus.bus_no, second_bus.company
+FROM routes first_bus
+JOIN stops trans1 ON first_bus.b_stop = trans1.id
+JOIN routes second_bus
+JOIN stops trans2 ON second_bus.a_stop = trans2.id
+WHERE trans1.name = trans2.name
+AND first_bus.sa_name = 'Craiglockhart'
+AND second_bus.sb_name = 'Lochend'
+ORDER BY 1, 2, 3, 4;
