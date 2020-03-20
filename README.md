@@ -1,6 +1,6 @@
 # SQL Zoo
 
-> This project consists of Quizes and Exercises of https://sqlzoo.net. All the requirements specified here: https://www.theodinproject.com/courses/ruby-programming/lessons/advanced-building-blocks
+> This project consists of Quizes and Exercises of https://sqlzoo.net. All the requirements specified here: https://www.theodinproject.com/courses/databases/lessons/sql
 
 ## Built With
 
